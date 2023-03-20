@@ -13,8 +13,8 @@ Página Web destinada a usuarios que deseen compartir sus gustos y conocimiento 
 (libros, cine, pinturas).
 
 
-Los usuarios pueden realizar las siguientes accciones: 
-http://127.0.0.1:8000/AppUnderArt/underArt
+Pueden agregar, editar, eliminar desde aca: 
+http://127.0.0.1:8000/AppUnderArt
 
 podran tanto como dar de alta libros, peliculas u pinturas. editarlas, o eliminarlas.
 
