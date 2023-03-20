@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block change_content_artwork %}
+    <br><hr>
+     <form action="{% url 'AppUnderArtSearchArtWorks' %}">
+        {{ search_form.as_p }}
+     <input type="submit" value="Buscar pintura">
+    </form>
+
+    <hr><br>
+    <a href="{% url "AppUnderArtCreateArtWork" %}">Agregar pintura</a>
+
+    <hr><br>
+    {% if artworks %}
+        {% for artwork in artworks %}
+            <p> pintura: {{ artwork.piece_name }} artista: {{ artwork.piece_author }} anio: {{ artwork.piece_creation_year }}
+                     <a href="{% url 'AppUnderArtEditArtWrok' artwork.piece_name %}">Editar</a>
+                     <a href="{% url 'AppUnderArtDeleteArtWork' artwork.piece_name %}">Eliminar</a>
+            </p>
+        {% endfor %}
+    {% else %}
+        <h1>No hay obras en el momento</h1>
+    {% endif %}
+
+{% endblock %}

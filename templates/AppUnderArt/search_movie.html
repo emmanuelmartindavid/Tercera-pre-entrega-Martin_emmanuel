@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block change_content_movie %}
+    {% if movies %}
+        {% for movie in movies %}
+            <p>movie: {{ movie }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No hay peliculas en su busqueda</h3>
+    {% endif %}
+{% endblock %}

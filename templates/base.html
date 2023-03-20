@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <a class="navbar-brand" href="{% url 'AppUnderArtHome' %}">UnderArt</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'AppUnderArtBooks' %}">Libros</a>
+                     {% block change_content %}
+                    <h1>No se encuentra contenido disponible</h1>
+                {% endblock %}
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'AppUnderArtMovies' %}">Películas</a>
+                      {% block change_content_movie %}
+                    <h1>No se encuentra contenido disponible</h1>
+                {% endblock %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'AppUnderArtArtWorks' %}">Pinturas</a>
+                     {% block change_content_artwork %}
+                    <h1>No se encuentran pinturas disponibles</h1>
+                {% endblock %}
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-qnVuKMP2St1ZwBk2a8PvHJ2gcJ53U5h6ag+Edv0Dg5MmZfpOaxmZ8KM6kL+Z3tn7" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-DWCBqbZRJvVcYOLwSvrkV8d1bnTjvGnX9Er98UVmqJ/lFjxrmq3Qk0eQZM+US8WJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-nTRV9/V4L1y7VQWxKvNcVfZ89SbZXYVBJi/ymvZfbl9XyJMcPJ/U+47IN24E6Lal" crossorigin="anonymous"></script>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block change_content %}
+    {% if books %}
+        {% for book in books %}
+            <p>book: {{ book }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No hay libros en su busqueda</h3>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block change_content_movie %}
+    <br><hr>
+     <form action="{% url 'AppUnderArtSearchMovies' %}">
+        {{ search_form.as_p }}
+     <input type="submit" value="Buscar pelicula">
+    </form>
+
+    <hr><br>
+    <a href="{% url "AppUnderArtCreateMovie" %}">Agregar pelicula</a>
+
+    <hr><br>
+    {% if movies %}
+        {% for movie in movies %}
+            <p> pelicula: {{ movie.movie_name }} director: {{ movie.movie_director }} anio de estreno: {{ movie.movie_release_year }}
+                     <a href="{% url 'AppUnderArtEditMovie' movie.movie_name %}">Editar</a>
+                     <a href="{% url 'AppUnderArtDeleteMovie' movie.movie_name %}">Eliminar</a>
+            </p>
+        {% endfor %}
+    {% else %}
+        <h1>No hay peliculas en el momento</h1>
+    {% endif %}
+
+{% endblock %}

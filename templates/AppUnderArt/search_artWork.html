@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block change_content_artwork %}
+    {% if artworks %}
+        {% for artwork in artworks %}
+            <p>artwork: {{ artwork }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>No hay pinturas en su busqueda</h3>
+    {% endif %}
+{% endblock %}

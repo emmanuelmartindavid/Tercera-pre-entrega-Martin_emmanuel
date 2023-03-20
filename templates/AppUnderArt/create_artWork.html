@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block change_content_artwork %}
+
+    <form action="{% url 'AppUnderArtCreateArtWork' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Crear obra(pintura)">
+    </form>
+{% endblock %}
